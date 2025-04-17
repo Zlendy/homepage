@@ -390,6 +390,9 @@ export function cleanServiceGroups(groups) {
 
           // spoolman
           spoolIds,
+
+          // jellystat
+          libraries,
         } = widgetData;
 
         let fieldsList = fields;
@@ -556,6 +559,9 @@ export function cleanServiceGroups(groups) {
         }
         if (type === "spoolman") {
           if (spoolIds !== undefined) widget.spoolIds = spoolIds;
+        }
+        if (type === "jellystat") {
+          if (libraries !== undefined) widget.libraries = libraries;
         }
         return widget;
       });
