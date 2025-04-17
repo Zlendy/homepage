@@ -1,6 +1,7 @@
 import Block from "components/services/widget/block";
 import Container from "components/services/widget/container";
 import { useEffect, useMemo, useState } from "react";
+
 import { formatProxyUrl } from "utils/proxy/api-helpers";
 
 /**
