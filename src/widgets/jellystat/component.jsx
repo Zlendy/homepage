@@ -31,6 +31,15 @@ function countByLibrary(data, libraries) {
 export default function Component({ service }) {
   const { widget } = service;
 
+  if (!widget.libraries) {
+    widget.libraries = [];
+  }
+
+  const MAX_ALLOWED_FIELDS = 4;
+  if (widget.libraries.length > MAX_ALLOWED_FIELDS) {
+    widget.libraries = widget.libraries.slice(0, MAX_ALLOWED_FIELDS);
+  }
+
   const [viewsData, setViewsData] = useState(null);
   const libraries = useMemo(() => countByLibrary(viewsData, widget.libraries), [viewsData, widget.libraries]);
 
