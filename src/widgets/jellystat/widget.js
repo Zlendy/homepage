@@ -1,13 +1,12 @@
-import genericProxyHandler from "utils/proxy/handlers/generic";
+import credentialedProxyHandler from "utils/proxy/handlers/credentialed";
 
 const widget = {
-  api: "{url}/{endpoint}?apiKey={key}",
-  proxyHandler: genericProxyHandler,
+  api: "{url}/{endpoint}",
+  proxyHandler: credentialedProxyHandler,
 
   mappings: {
-    getViewsByDays: {
-      method: "POST",
-      endpoint: "stats/getViewsByDays",
+    getViewsByLibraryType: {
+      endpoint: "stats/getViewsByLibraryType",
     },
   },
 };
